@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b10" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>SleepFlow</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">SleepFlow</div>
+        <h1>امروز</h1>
+      </div>
+      <button id="installBtn" class="ghost hidden">نصب اپ</button>
+    </header>
+
+    <section class="hero card">
+      <div class="metric">
+        <span class="label">خواب دیشب</span>
+        <strong id="sleepDuration">—</strong>
+      </div>
+      <div class="metric">
+        <span class="label">بدهی خواب</span>
+        <strong id="sleepDebt">—</strong>
+      </div>
+      <div class="metric">
+        <span class="label">هدف امشب</span>
+        <strong id="targetBedtime">—</strong>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <h2>ثبت خواب</h2>
+        <button id="copyLastBtn" class="ghost">مثل شب قبل</button>
+      </div>
+      <div class="grid2">
+        <label>رفتن به تخت
+          <input id="bedtime" type="time" value="05:00">
+        </label>
+        <label>بیدار شدن
+          <input id="waketime" type="time" value="12:00">
+        </label>
+        <label>خواب واقعی
+          <input id="actualSleep" type="number" min="0" max="16" step="0.1" placeholder="مثلاً 6.8">
+        </label>
+        <label>نیاز خواب
+          <input id="sleepNeed" type="number" min="5" max="12" step="0.25" value="8.25">
+        </label>
+      </div>
+      <button id="saveSleepBtn" class="primary">ثبت و تحلیل</button>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <h2>برنامه تطبیقی امروز</h2>
+        <span class="badge" id="shiftBadge">—</span>
+      </div>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <section class="card">
+      <h2>هدف تغییر ساعت خواب</h2>
+      <div class="grid2">
+        <label>خواب هدف
+          <input id="goalBedtime" type="time" value="23:00">
+        </label>
+        <label>بیداری هدف
+          <input id="goalWake" type="time" value="07:00">
+        </label>
+      </div>
+      <label>حداکثر جابه‌جایی روزانه
+        <select id="maxShift">
+          <option value="30">۳۰ دقیقه</option>
+          <option value="45" selected>۴۵ دقیقه</option>
+          <option value="60">۶۰ دقیقه</option>
+        </select>
+      </label>
+      <button id="saveGoalBtn" class="secondary">ذخیره هدف</button>
+    </section>
+
+    <section class="card smallprint">
+      <p>این نسخه برای خودمدیریتی خواب است و ابزار تشخیص پزشکی نیست. همه داده‌ها فقط در مرورگر همین دستگاه ذخیره می‌شوند.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
